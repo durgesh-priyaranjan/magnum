@@ -1,0 +1,71 @@
+{{!< default}}
+{{> header}}
+<div class="wrapper_magnum">
+    <main class="main_magnum" role="main">
+        {{#post}}
+        <article class="article_magnum" role="article" itemscope itemtype="http://schema.org/Article">
+            <header class="postheader_magnum">
+                <h1 class="posttitle_magnum" itemprop="headline">{{title}}</h1>
+            </header>
+            <div class="postcontent_magnum" itemprop="articleBody">
+                {{content}}
+            </div>
+
+            <footer class="article_meta_magnum">
+                <div  class="half">
+                    <div>
+                        <span  class="dimmed">Posted on </span>
+                        <time class="date_magnum" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+                    </div>
+                    {{#if tags}}
+                        <div>
+                            <span class="dimmed"> Tagged in </span>
+                            <span> {{tags separator=" , "}}</span>
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="half text-right">
+                    <h6 class="share_magnum dimmed">Share this post</h6>
+                    <a class="share_magnum  btn" target="_blank" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}">
+                        <i class="fa fa-twitter"></i><span class="hidethis_magnum"></span>
+                    </a>
+                    <a class="share_magnum  btn" target="_blank" href="http://www.facebook.com/sharer.php?u={{url absolute="true"}}">
+                        <i class="fa fa-facebook"></i><span class="hidethis_magnum"></span>
+                    </a>
+                    <a class="share_magnum  btn" target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">
+                        <i class="fa fa-google-plus"></i><span class="hidethis_magnum"></span>
+                    </a>
+                </div>
+                <div class="clear"></div>
+                {{#if author}}
+                <div class="postauther_magnum">
+                        <address itemscope itemtype="http://schema.org/Person">
+                            {{#if author.image}}
+                            <figure class="user-image">
+                                <div itemprop="image" class="authorimage_magnum" style="background-image: url({{author.image}});"></div>
+                            </figure>
+                        {{/if}}
+                        <h6 class="authorname_magnum"><span itemprop="author">{{author.name}}</span></h6>
+                        {{#if author.website}}
+                        <div class="authorwebsite_magnum"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+                        {{/if}}
+                        <div class="authorbio_magnum">
+                            <p>{{author.bio}}</p>
+                        </div>
+                        <div class="clear"></div>
+                        </address>
+                </div>
+                {{/if}}
+            </footer>
+
+        </article>
+        {{/post}}
+
+        {{#if pagination}}
+            <div class="pagination_magnum">
+                {{{pagination}}}
+            </div>
+        {{/if}}
+    </main>
+</div>
+{{> footer}}

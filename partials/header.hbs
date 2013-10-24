@@ -1,0 +1,17 @@
+<div role='banner' class="header_magnum">
+	{{#if @blog.logo}}
+	<a class="logo_magnum" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+	{{/if}}
+
+	<h1 class="blogtitle_magnum">
+		<a title="{{@blog.title}}" href='{{@blog.url}}'>
+		{{{@blog.title}}}
+		</a>
+	</h1>
+
+	<h4 class="blogdescription_magnum">
+		<a title="{{@blog.title}}" href='{{@blog.url}}'>
+		{{@blog.description}}
+		</a>
+	</h4>
+</div>

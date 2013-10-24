@@ -1,0 +1,38 @@
+{{!< default}}
+{{> header}}
+
+<div class="wrapper_magnum">
+	<main class="main_magnum" role="main">
+		
+		{{#foreach posts}}
+		<article class="article_magnum" role="article" itemscope itemtype="http://schema.org/Article">
+			<header class="postheader_magnum">
+				<h1 class="posttitle_magnum" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{title}}</a></h1>
+			</header>
+			<div class="postcontent_magnum" itemprop="articleBody">
+				{{content words=50}}
+			</div>
+			<div class="readmore_magnum">
+				<a class="btn" href="{{{url}}}" rel="bookmark">Read More →</a>
+			</div>
+			<footer class="article_meta_magnum">
+				<span  class="dimmed">Posted on </span>
+				<time class="date_magnum" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+				{{#if tags}}
+					<div>
+						<span class="dimmed"> Tagged in </span>
+						<span> {{tags separator=" , "}}</span>
+					</div>
+				{{/if}}
+			</footer>
+		</article>
+		{{/foreach}}
+
+		{{#if pagination}}
+		<div class="pagination_magnum">
+			{{{pagination}}}
+		</div>
+		{{/if}}
+	</main>
+</div>
+{{> footer}}
