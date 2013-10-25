@@ -307,6 +307,7 @@ input[type="text"] {
   padding: 0.4em;
   border-radius: 5px;
   color: #fff;
+  display: inline-block;
 }
 .wrapper_magnum {
   width: 100%;
@@ -435,6 +436,7 @@ a.btn.icon-gplus {
   padding: 0.4em;
   border-radius: 5px;
   color: #fff;
+  display: inline-block;
 }
 footer a.subscribe_magnum {
   margin-bottom: 1.3483333333333334em;
@@ -457,6 +459,9 @@ footer a.subscribe_magnum {
   border-radius: 50%;
   float: left;
   margin-right: 1em;
+}
+.authorbio_magnum p {
+  line-height: 1.1rem;
 }
 .footertext_magnum {
   font-size: 0.809em;
