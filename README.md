@@ -9,7 +9,7 @@ A  simple and responsive theme for [Ghost](http://github.com/tryghost/ghost/).
 
 
 #### Demo:
-[Magnum at GhostLook.com](magnum.ghostlook.com)
+[Magnum at GhostLook.com](http://magnum.ghostlook.com/)
 
 
 #### Usage:
@@ -21,7 +21,7 @@ Just copy the directory "magnum" and paste it inside "content/theme", and select
 
 
 #### Licence:
-Released under MIT License. Feel free to use or abuse it.A link back to the [GhostLook.com](magnum.ghostlook.com) is appreciated but not mandatory.
+Released under MIT License. Feel free to use or abuse it.A link back to the [GhostLook.com](http://magnum.ghostlook.com/) is appreciated but not mandatory.
 
 #### Support:
 Development will be carried and future versions of Ghost will be supported. Feel free to report an issue or enhancement request at [Issue Tracker](https://github.com/durgesh-priyaranjan/magnum/issues). 
