@@ -31,7 +31,6 @@ module.exports = function(grunt) {
           [
           'bower_components/modernizr/modernizr.js',
           'custom_components/responsive_iframes/responsive_iframes.js',
-          'custom_components/highlighter.js',
           'custom_components/magnum.js'
           ]
         }
