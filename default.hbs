@@ -66,13 +66,13 @@
         var getCommentPlugin = function(forWhat){
             return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-width="100%" data-numposts="10" data-colorscheme="light"></div>');
         }
+        // like button on the footer in every page
         $('body > footer').prepend(getLikePlugin('site'));
+
         if($('body').hasClass('post-template')){
+            // like and comments on every post, at the end of the post
             getLikePlugin('page').insertBefore($('article > footer'))
             getCommentPlugin('page').insertBefore($('article > footer'))
-        }else if($('body').hasClass('home-template')){
-            // $('article > footer').append(getLikePlugin('page'));
-            // $('.pagination_magnum').append(getCommentPlugin())
         }
     </script>
 </body>
