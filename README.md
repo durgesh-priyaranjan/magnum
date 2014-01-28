@@ -19,6 +19,8 @@ Theme can be downloaded from [here](https://github.com/durgesh-priyaranjan/magnu
     
 Just copy the directory "magnum" and paste it inside "content/theme", and select the theme as magnum from the administrator's panel. "asset" directory contains javascript and css files in minified version.The unminified version of the stylesheet and javascript files can be found inside asset-compiler.
 
+#### Contribute:
+Go to [asset-compiler](/asset-compiler) for more info.
 
 #### Licence:
 Released under MIT License. Feel free to use or abuse it.A link back to the [GhostLook.com](http://magnum.ghostlook.com/) is appreciated but not mandatory.

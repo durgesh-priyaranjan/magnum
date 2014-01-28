@@ -46,6 +46,9 @@
     <!-- Automatic facebook like, share and comment plugin -->
     <script type="text/javascript">
         var currentUrl = document.URL;
+        if(currentUrl.indexOf('localhost') > -1){
+            currentUrl = 'http://webdesignporto.com';
+        }
         var getLikePlugin = function(){
             return $('<div class="fb-like" data-href="'+currentUrl+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
         }
@@ -53,14 +56,10 @@
             return $('<div class="fb-comments" data-href="'+currentUrl+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
         }
         if($('body').hasClass('post-template')){
-            setTimeout(function(){
-                getLikePlugin().insertBefore($('article > footer'))
-                getCommentPlugin().insertBefore($('article > footer'))
-            }, 1000)
+            getLikePlugin().insertBefore($('article > footer'))
+            getCommentPlugin().insertBefore($('article > footer'))
         }else if($('body').hasClass('home-template')){
-            setTimeout(function(){
-                $('.readmore_magnum').append(getLikePlugin());
-            }, 1000)
+            $('article > footer').append(getLikePlugin());
         }
     </script>
 </body>
