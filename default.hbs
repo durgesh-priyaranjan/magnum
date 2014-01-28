@@ -53,13 +53,15 @@
             return $('<div class="fb-like" data-href="'+currentUrl+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
         }
         var getCommentPlugin = function(){
-            return $('<div class="fb-comments" data-href="'+currentUrl+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
+            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+currentUrl+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
         }
         if($('body').hasClass('post-template')){
             getLikePlugin().insertBefore($('article > footer'))
             getCommentPlugin().insertBefore($('article > footer'))
         }else if($('body').hasClass('home-template')){
             $('article > footer').append(getLikePlugin());
+            $('body > footer').prepend(getLikePlugin());
+            // $('.pagination_magnum').append(getCommentPlugin())
         }
     </script>
 </body>
