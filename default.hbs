@@ -46,21 +46,32 @@
     <!-- Automatic facebook like, share and comment plugin -->
     <script type="text/javascript">
         var currentUrl = document.URL;
-        if(currentUrl.indexOf('localhost') > -1){
-            currentUrl = 'http://webdesignporto.com';
+        var getUrl = function(forWhat){
+            var url;
+            if(forWhat === 'page'){
+                url = document.URL;
+            }else if(forWhat === 'site'){
+                url = '{{@blog.url}}';
+            }
+            // required in order to like button to show up on localhost
+            if(url.indexOf('localhost') > -1){
+                url = 'http://google.com';
+            }
+            return url;
         }
-        var getLikePlugin = function(){
-            return $('<div class="fb-like" data-href="'+currentUrl+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
+
+        var getLikePlugin = function(forWhat){
+            return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
         }
-        var getCommentPlugin = function(){
-            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+currentUrl+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
+        var getCommentPlugin = function(forWhat){
+            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
         }
+        $('body > footer').prepend(getLikePlugin('site'));
         if($('body').hasClass('post-template')){
-            getLikePlugin().insertBefore($('article > footer'))
-            getCommentPlugin().insertBefore($('article > footer'))
+            getLikePlugin('page').insertBefore($('article > footer'))
+            getCommentPlugin('page').insertBefore($('article > footer'))
         }else if($('body').hasClass('home-template')){
-            $('article > footer').append(getLikePlugin());
-            $('body > footer').prepend(getLikePlugin());
+            $('article > footer').append(getLikePlugin('page'));
             // $('.pagination_magnum').append(getCommentPlugin())
         }
     </script>
