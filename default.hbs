@@ -61,10 +61,10 @@
         }
 
         var getLikePlugin = function(forWhat){
-            return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-width="100%" data-action="like" data-show-faces="true" data-share="true"></div>')
+            return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
         }
         var getCommentPlugin = function(forWhat){
-            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-width="100%" data-numposts="10" data-colorscheme="light"></div>');
+            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-numposts="10" data-colorscheme="light"></div>');
         }
         // like button on the footer in every page
         $('body > footer').prepend(getLikePlugin('site'));
