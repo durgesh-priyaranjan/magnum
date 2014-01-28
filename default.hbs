@@ -25,5 +25,55 @@
 	{{! Scripts }}
 	<script type='text/javascript' src='/assets/highlighter/prettify.js'></script>
 	<script type='text/javascript' src='/assets/js/all.min.js'></script>
+    <!-- Google Analytics -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-12420899-1');ga('send','pageview');
+    </script>
+    <!-- Facebook API -->
+    <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128906793946521";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Automatic facebook like, share and comment plugin -->
+    <script type="text/javascript">
+        var currentUrl = document.URL;
+        var getUrl = function(forWhat){
+            var url;
+            if(forWhat === 'page'){
+                url = document.URL;
+            }else if(forWhat === 'site'){
+                url = '{{@blog.url}}';
+            }
+            // required in order to like button to show up on localhost
+            if(url.indexOf('localhost') > -1){
+                url = 'http://google.com';
+            }
+            return url;
+        }
+
+        var getLikePlugin = function(forWhat){
+            return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
+        }
+        var getCommentPlugin = function(forWhat){
+            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
+        }
+        $('body > footer').prepend(getLikePlugin('site'));
+        if($('body').hasClass('post-template')){
+            getLikePlugin('page').insertBefore($('article > footer'))
+            getCommentPlugin('page').insertBefore($('article > footer'))
+        }else if($('body').hasClass('home-template')){
+            // $('article > footer').append(getLikePlugin('page'));
+            // $('.pagination_magnum').append(getCommentPlugin())
+        }
+    </script>
 </body>
 </html>
