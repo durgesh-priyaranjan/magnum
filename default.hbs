@@ -25,5 +25,43 @@
 	{{! Scripts }}
 	<script type='text/javascript' src='/assets/highlighter/prettify.js'></script>
 	<script type='text/javascript' src='/assets/js/all.min.js'></script>
+    <!-- Google Analytics -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-12420899-1');ga('send','pageview');
+    </script>
+    <!-- Facebook API -->
+    <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128906793946521";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Automatic facebook like, share and comment plugin -->
+    <script type="text/javascript">
+        var currentUrl = document.URL;
+        var getLikePlugin = function(){
+            return $('<div class="fb-like" data-href="'+currentUrl+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
+        }
+        var getCommentPlugin = function(){
+            return $('<div class="fb-comments" data-href="'+currentUrl+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
+        }
+        if($('body').hasClass('post-template')){
+            setTimeout(function(){
+                getLikePlugin().insertBefore($('article > footer'))
+                getCommentPlugin().insertBefore($('article > footer'))
+            }, 1000)
+        }else if($('body').hasClass('home-template')){
+            setTimeout(function(){
+                $('.readmore_magnum').append(getLikePlugin());
+            }, 1000)
+        }
+    </script>
 </body>
 </html>
