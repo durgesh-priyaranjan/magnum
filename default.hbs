@@ -71,8 +71,8 @@
 
         if($('body').hasClass('post-template')){
             // like and comments on every post, at the end of the post
-            getLikePlugin('page').insertBefore($('article > footer'))
-            getCommentPlugin('page').insertBefore($('article > footer'))
+            getLikePlugin('page').insertBefore($('article > #disqus_thread'))
+            getCommentPlugin('page').insertBefore($('article > #disqus_thread'))
         }
     </script>
 </body>
