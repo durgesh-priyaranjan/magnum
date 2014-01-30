@@ -56,19 +56,23 @@
                 <div class="postauther_magnum">
                         <address itemscope itemtype="http://schema.org/Person">
                             {{#if author.image}}
-                            <figure class="user-image">
-                                <div itemprop="image" class="authorimage_magnum" style="background-image: url({{author.image}});"></div>
-                            </figure>
-                        {{/if}}
-                        <h6 class="authorname_magnum"><span itemprop="author"><a href="https://plus.google.com/117110087634936225779?rel=author">{{author.name}}</a></span></h6>
-                        {{#if author.website}}
-                        <div class="authorwebsite_magnum"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
-                        {{/if}}
-                        <div class="authorbio_magnum">
-                            <p>{{author.bio}}</p>
-                        </div>
-                        <div class="clear"></div>
+                                <figure class="user-image">
+                                    <div itemprop="image" class="authorimage_magnum" style="background-image: url({{author.image}});"></div>
+                                </figure>
+                            {{/if}}
+                            <h6 class="authorname_magnum"><a href="https://plus.google.com/117110087634936225779?rel=author"><span itemprop="name">{{author.name}}</span></a></h6>
+                            {{#if author.website}}
+                                <div class="authorwebsite_magnum"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+                            {{/if}}
+                            <div class="authorbio_magnum">
+                                <p>{{author.bio}}</p>
+                            </div>
+                            <div class="clear"></div>
                         </address>
+                        <div itemtype="AggregateRating">
+                            <span itemprop="ratingValue">1</span>
+                            <span itemprop="ratingCount">1</span>
+                        </div>
                 </div>
                 {{/if}}
 
