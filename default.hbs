@@ -4,6 +4,12 @@
 	{{! Document Settings }}
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <script>
+        // UNCOMMENT AND SUET YOUR VARIABLES FOR DISQUS AND GOOGLE ANALYTICS
+        // var d_id  = 'adasdaasd',
+        //     g_id  = '12420899-1', // Format: ########-#, Example: 11220899-1
+        //     g_url = 'yoursite.com' // Format: #####.####, Example: webdesignporto.com
+    </script>
 	{{! Page Meta }}
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
@@ -20,20 +26,23 @@
 	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
+    {{{customSiteHtml}}}
 	{{{body}}}
 	{{ghost_foot}}
 	{{! Scripts }}
 	<script type='text/javascript' src='/assets/highlighter/prettify.js'></script>
 	<script type='text/javascript' src='/assets/js/all.min.js'></script>
+
     <!-- Google Analytics -->
     <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-12420899-1');ga('send','pageview');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//stats.g.doubleclick.net/dc.js','ga');
+      ga('create', 'UA-'+g_id, g_url);
+      ga('send', 'pageview');
     </script>
+
     <!-- Facebook API -->
     <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,6 +52,7 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
     <!-- Automatic facebook like, share and comment plugin -->
     <script type="text/javascript">
         var currentUrl = document.URL;
@@ -64,15 +74,15 @@
             return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
         }
         var getCommentPlugin = function(forWhat){
-            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-width="576" data-numposts="10" data-colorscheme="light"></div>');
+            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-numposts="10" data-colorscheme="light"></div>');
         }
+        // like button on the footer in every page
         $('body > footer').prepend(getLikePlugin('site'));
+
         if($('body').hasClass('post-template')){
-            getLikePlugin('page').insertBefore($('article > footer'))
-            getCommentPlugin('page').insertBefore($('article > footer'))
-        }else if($('body').hasClass('home-template')){
-            // $('article > footer').append(getLikePlugin('page'));
-            // $('.pagination_magnum').append(getCommentPlugin())
+            // like and comments on every post, at the end of the post
+            getLikePlugin('page').insertBefore($('article > #disqus_thread'))
+            getCommentPlugin('page').insertBefore($('article > #disqus_thread'))
         }
     </script>
 </body>

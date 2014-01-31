@@ -5,11 +5,26 @@
         {{#post}}
         <article class="article_magnum" role="article" itemscope itemtype="http://schema.org/Article">
             <header class="postheader_magnum">
-                <h1 class="posttitle_magnum" itemprop="headline">{{title}}</h1>
+                <h1 class="posttitle_magnum" itemprop="headline" id="header">{{title}}</h1>
             </header>
             <div class="postcontent_magnum" itemprop="articleBody">
                 {{content}}
             </div>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = d_id;
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
             <footer class="article_meta_magnum">
                 <div  class="half">
@@ -41,21 +56,26 @@
                 <div class="postauther_magnum">
                         <address itemscope itemtype="http://schema.org/Person">
                             {{#if author.image}}
-                            <figure class="user-image">
-                                <div itemprop="image" class="authorimage_magnum" style="background-image: url({{author.image}});"></div>
-                            </figure>
-                        {{/if}}
-                        <h6 class="authorname_magnum"><span itemprop="author">{{author.name}}</span></h6>
-                        {{#if author.website}}
-                        <div class="authorwebsite_magnum"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
-                        {{/if}}
-                        <div class="authorbio_magnum">
-                            <p>{{author.bio}}</p>
-                        </div>
-                        <div class="clear"></div>
+                                <figure class="user-image">
+                                    <div itemprop="image" class="authorimage_magnum" style="background-image: url({{author.image}});"></div>
+                                </figure>
+                            {{/if}}
+                            <h6 class="authorname_magnum"><a href="https://plus.google.com/117110087634936225779?rel=author"><span itemprop="name">{{author.name}}</span></a></h6>
+                            {{#if author.website}}
+                                <div class="authorwebsite_magnum"><a href="{{author.website}}" itemprop="url">{{author.website}}</a></div>
+                            {{/if}}
+                            <div class="authorbio_magnum">
+                                <p>{{author.bio}}</p>
+                            </div>
+                            <div class="clear"></div>
                         </address>
+                        <div itemscope itemtype="http://schema.org/AggregateRating">
+                            <span itemprop="ratingValue">1</span>
+                            <span itemprop="ratingCount">1</span>
+                        </div>
                 </div>
                 {{/if}}
+
             </footer>
 
         </article>

@@ -197,3 +197,8 @@ footer a.subscribe_magnum{
 .footertext_magnum{
 	font-size: (@golden / 2) + 0em;
 }
+
+// Facebook comments should be 100% because can break the layout on mobile.
+.fb-comments, .fb-comments > span, .fb-comments > span> iframe[style] {
+    width: 100% !important;
+};
