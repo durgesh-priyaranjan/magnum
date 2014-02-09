@@ -1,11 +1,18 @@
 # Magnum
 
-A  simple and responsive theme for [Ghost](http://github.com/tryghost/ghost/).
+A  simple and responsive theme for [Ghost](http://github.com/tryghost/ghost/) and is compatible with version 0.4.*
 
 #### Features:
 1) Responsive
 2) Simplistic
 3) Support for code
+
+#### New Features:
+1) Integerated Google Analytics
+2) Facebook Comments
+3) Disqus
+4) Facebook likes
+Thanks to [TT TY](https://github.com/totty90) for adding these features. More information and documentation aout these features can be found in [this post](http://www.webdesignporto.com/ghost-blog-theme-with-facebook-comments-and-likes/)
 
 
 #### Demo:
