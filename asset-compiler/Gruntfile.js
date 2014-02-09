@@ -27,11 +27,10 @@ module.exports = function(grunt) {
       },
       combinejs: {
         files: {
-          '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/assets/js/all.min.js': 
+          '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/assets/js/all.min.js':
           [
           'bower_components/modernizr/modernizr.js',
           'custom_components/responsive_iframes/responsive_iframes.js',
-          'custom_components/highlighter.js',
           'custom_components/magnum.js'
           ]
         }
@@ -61,7 +60,7 @@ module.exports = function(grunt) {
       }
     },
 
-    'ghost_location': '../../../../../Ghost/',
+    'ghost_location': '../../Ghost/',
     'ghost_theme_name': 'magnum',
 
   });

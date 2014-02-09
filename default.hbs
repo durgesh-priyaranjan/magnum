@@ -4,12 +4,20 @@
 	{{! Document Settings }}
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <script>
+        // UNCOMMENT AND SUET YOUR VARIABLES FOR DISQUS AND GOOGLE ANALYTICS
+        // var d_id  = 'adasdaasd',
+        //     g_id  = '12420899-1', // Format: ########-#, Example: 11220899-1
+        //     g_url = 'yoursite.com' // Format: #####.####, Example: webdesignporto.com
+    </script>
 	{{! Page Meta }}
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
 	{{! Styles }}
 	<link href='//fonts.googleapis.com/css?family=Lato:300,400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/assets/highlighter/prettify.css" />
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 	{{! Responsive Meta Tags }}
 	<meta name="HandheldFriendly" content="True" />
@@ -18,9 +26,64 @@
 	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
+    {{{customSiteHtml}}}
 	{{{body}}}
 	{{ghost_foot}}
 	{{! Scripts }}
+	<script type='text/javascript' src='/assets/highlighter/prettify.js'></script>
 	<script type='text/javascript' src='/assets/js/all.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//stats.g.doubleclick.net/dc.js','ga');
+      ga('create', 'UA-'+g_id, g_url);
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Facebook API -->
+    <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128906793946521";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Automatic facebook like, share and comment plugin -->
+    <script type="text/javascript">
+        var currentUrl = document.URL;
+        var getUrl = function(forWhat){
+            var url;
+            if(forWhat === 'page'){
+                url = document.URL;
+            }else if(forWhat === 'site'){
+                url = '{{@blog.url}}';
+            }
+            // required in order to like button to show up on localhost
+            if(url.indexOf('localhost') > -1){
+                url = 'http://google.com';
+            }
+            return url;
+        }
+
+        var getLikePlugin = function(forWhat){
+            return $('<div class="fb-like" data-href="'+getUrl(forWhat)+'" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>')
+        }
+        var getCommentPlugin = function(forWhat){
+            return $('<h3 id="comments">Your word now</h3><div class="fb-comments" data-href="'+getUrl(forWhat)+'" data-numposts="10" data-colorscheme="light"></div>');
+        }
+        // like button on the footer in every page
+        $('body > footer').prepend(getLikePlugin('site'));
+
+        if($('body').hasClass('post-template')){
+            // like and comments on every post, at the end of the post
+            getLikePlugin('page').insertBefore($('article > #disqus_thread'))
+            getCommentPlugin('page').insertBefore($('article > #disqus_thread'))
+        }
+    </script>
 </body>
 </html>

@@ -1,114 +1,120 @@
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-pre {
-  border: 1px solid #e9e9ff;
-}
-pre code {
+pre.prettyprint {
   display: block;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8ff;
+  background-color: #1B2426;
+  font-family: 'Inconsolata', sans-serif;
+  padding: 1rem;
+  line-height: 1.1em;
 }
-pre .comment,
-pre .template_comment,
-pre .diff .header,
-pre .javadoc {
-  color: #998;
-  font-style: italic;
+pre .nocode {
+  background-color: none;
+  color: #000000;
 }
-pre .keyword,
-pre .css .rule .keyword,
-pre .winutils,
-pre .javascript .title,
-pre .nginx .title,
-pre .subst,
-pre .request,
-pre .status {
-  color: #333;
+pre .str {
+  color: #ffa0a0;
+}
+/* string  - pink */
+pre .kwd {
+  color: #5BA1CF;
   font-weight: bold;
 }
-pre .number,
-pre .hexcolor,
-pre .ruby .constant {
-  color: #099;
+pre .com {
+  color: #878a85;
 }
-pre .string,
-pre .tag .value,
-pre .phpdoc,
-pre .tex .formula {
-  color: #dd1144;
+/* comment - light grey */
+pre .typ {
+  color: #98fb98;
 }
-pre .title,
-pre .id {
-  color: #900;
+/* type    - lightgreen */
+pre .lit {
+  color: #cd5c5c;
+}
+/* literal - darkred */
+pre .pun {
+  color: #ffffff;
+}
+/* punctuation */
+pre .pln {
+  color: #ffffff;
+}
+/* plaintext */
+pre .tag {
+  color: #f0e68c;
   font-weight: bold;
 }
-pre .javascript .title,
-pre .lisp .title,
-pre .clojure .title,
-pre .subst {
-  font-weight: normal;
-}
-pre .class .title,
-pre .haskell .type,
-pre .vhdl .literal,
-pre .tex .command {
-  color: #458;
+/* html/xml tag    - lightyellow */
+pre .atn {
+  color: #bdb76b;
   font-weight: bold;
 }
-pre .tag,
-pre .tag .title,
-pre .rules .property,
-pre .django .tag .keyword {
-  color: #000080;
-  font-weight: normal;
+/* attribute name  - khaki */
+pre .atv {
+  color: #ffa0a0;
 }
-pre .attribute,
-pre .variable,
-pre .lisp .body {
-  color: #008080;
+/* attribute value - pink */
+pre .dec {
+  color: #98fb98;
 }
-pre .regexp {
-  color: #009926;
+/* decimal         - lightgreen */
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #aeaeae;
 }
-pre .class {
-  color: #458;
-  font-weight: bold;
+/* IE indents via margin-left */
+/* Alternate shading for lines */
+li:before {
+  content: " ";
+  margin-left: -5px;
 }
-pre .symbol,
-pre .ruby .symbol .string,
-pre .lisp .keyword,
-pre .tex .special,
-pre .prompt {
-  color: #990073;
-}
-pre .built_in,
-pre .lisp .title,
-pre .clojure .built_in {
-  color: #0086b3;
-}
-pre .preprocessor,
-pre .pi,
-pre .doctype,
-pre .shebang,
-pre .cdata {
-  color: #999;
-  font-weight: bold;
-}
-pre .deletion {
-  background: #ffdddd;
-}
-pre .addition {
-  background: #ddffdd;
-}
-pre .diff .change {
-  background: #0086b3;
-}
-pre .chunk {
-  color: #aaaaaa;
+@media print {
+  pre.prettyprint {
+    background-color: none;
+  }
+  pre .str,
+  code .str {
+    color: #006600;
+  }
+  pre .kwd,
+  code .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+  pre .com,
+  code .com {
+    color: #600;
+    font-style: italic;
+  }
+  pre .typ,
+  code .typ {
+    color: #404;
+    font-weight: bold;
+  }
+  pre .lit,
+  code .lit {
+    color: #004444;
+  }
+  pre .pun,
+  code .pun {
+    color: #444400;
+  }
+  pre .pln,
+  code .pln {
+    color: #000000;
+  }
+  pre .tag,
+  code .tag {
+    color: #006;
+    font-weight: bold;
+  }
+  pre .atn,
+  code .atn {
+    color: #440044;
+  }
+  pre .atv,
+  code .atv {
+    color: #006600;
+  }
 }
 .mt0 {
   margin-top: 0;
@@ -142,42 +148,46 @@ h1 {
   line-height: 1.313em;
   font-weight: 400;
   font-size: 3em;
-  margin: 0.563em 0;
+  margin: 0.563em 0 0.18766666666666665em;
 }
 h2 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 2.25em;
-  margin: 0.625em 0;
+  margin: 0.625em 0 0.20833333333333334em;
 }
 h3 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1.5em;
-  margin: 1.313em 0;
+  margin: 1.313em 0 0.43766666666666665em;
 }
 h4 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1.313em;
-  margin: 1.313em 0;
+  margin: 1.313em 0 0.43766666666666665em;
 }
 h5 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1.125em;
-  margin: 1.313em 0;
+  margin: 1.313em 0 0.43766666666666665em;
 }
 h6 {
   font-family: "Lato", "PT Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.313em;
   font-weight: 400;
   font-size: 1em;
-  margin: 0.75em 0;
+  margin: 0.75em 0 0.25em;
+}
+p,
+ul {
+  margin: 0.4rem 0;
 }
 .dimmed {
   color: #d2d2d2;
@@ -192,7 +202,7 @@ h1.posttitle_magnum a:visited {
   color: white;
   text-decoration: none;
 }
-h1.posttitle_magnum a:hover,
+h1.posttitle_magnum  a:hover,
 h1.posttitle_magnum a:focus {
   color: #e5e5e5;
 }
@@ -207,7 +217,7 @@ h1.posttitle_magnum a:focus {
 .article_magnum a:visited {
   color: #42d386;
 }
-.article_magnum a:hover,
+.article_magnum  a:hover,
 .article_magnum a:focus {
   color: #333333;
 }
@@ -296,10 +306,11 @@ input[type="text"] {
   padding: 0.4em;
   border-radius: 5px;
   color: #fff;
+  display: inline-block;
 }
 .wrapper_magnum {
   width: 100%;
-  max-width: 52.18em;
+  max-width: 59.379999999999995em;
   margin: 0 auto;
 }
 .article_magnum {
@@ -314,7 +325,7 @@ input[type="text"] {
 .article_magnum a:visited {
   color: #42d386;
 }
-.article_magnum a:hover,
+.article_magnum  a:hover,
 .article_magnum a:focus {
   color: #333333;
 }
@@ -378,7 +389,7 @@ a.btn.icon-gplus {
 .pagination_magnum a:visited {
   color: #42d386;
 }
-.pagination_magnum a:hover,
+.pagination_magnum  a:hover,
 .pagination_magnum a:focus {
   color: #333333;
 }
@@ -387,7 +398,7 @@ a.btn.icon-gplus {
 .pagination_magnum a:visited {
   color: #42d386;
 }
-.pagination_magnum a:hover,
+.pagination_magnum  a:hover,
 .pagination_magnum a:focus {
   color: #333333;
 }
@@ -424,6 +435,7 @@ a.btn.icon-gplus {
   padding: 0.4em;
   border-radius: 5px;
   color: #fff;
+  display: inline-block;
 }
 footer a.subscribe_magnum {
   margin-bottom: 1.3483333333333334em;
@@ -446,6 +458,9 @@ footer a.subscribe_magnum {
   border-radius: 50%;
   float: left;
   margin-right: 1em;
+}
+.authorbio_magnum p {
+  line-height: 1.1rem;
 }
 .footertext_magnum {
   font-size: 0.809em;

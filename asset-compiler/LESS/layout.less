@@ -64,12 +64,13 @@ input[type="text"]{
 		padding: 0.4em;
 		border-radius: 5px;
 		color: #fff;
+		display: inline-block;
 	}
 }
 
 .wrapper_magnum {
-    	width :100%;
-    	max-width : @readable_width + 2 * @add_padding;
+    	width : 100%;
+    	max-width : @readable_width * 1.2 + 2 * @add_padding;
     	margin : 0 auto;
 }
 
@@ -189,6 +190,15 @@ footer a.subscribe_magnum{
 	margin-right: 1em;
 }
 
+.authorbio_magnum p{
+	line-height: 1.1rem;
+}
+
 .footertext_magnum{
 	font-size: (@golden / 2) + 0em;
 }
+
+// Facebook comments should be 100% because can break the layout on mobile.
+.fb-comments, .fb-comments > span, .fb-comments > span> iframe[style] {
+    width: 100% !important;
+};
