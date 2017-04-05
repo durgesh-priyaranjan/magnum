@@ -1,3 +1,5 @@
+###Note: This theme is not maintained any more.
+
 # Magnum
 
 A  simple and responsive theme for [Ghost](http://github.com/tryghost/ghost/) and is compatible with version 0.4.*
