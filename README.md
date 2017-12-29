@@ -1,4 +1,4 @@
-###Note: This theme is not maintained any more.
+### Note: This theme is not maintained any more.
 
 # Magnum
 
@@ -37,6 +37,6 @@ Released under MIT License. Feel free to use or abuse it.A link back to the [Gho
 #### Support:
 Development will be carried and future versions of Ghost will be supported. Feel free to report an issue or enhancement request at [Issue Tracker](https://github.com/durgesh-priyaranjan/magnum/issues). 
 
-####Credits:
+#### Credits:
 1) [Google Code Prettify](http://code.google.com/p/google-code-prettify/) for syntax highlighting.
 2) [Hosting Ghost on Openshift](https://github.com/Laures/ghost-openshift-quickstart) .
