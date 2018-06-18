@@ -13,7 +13,7 @@
 	
     {{! Page Meta }}
 	<title>{{meta_title}}</title>
-	<meta name="description" content="{{meta_description}}" />
+	
 	
     {{! Styles }}
 	<link href='//fonts.googleapis.com/css?family=Lato:300,400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
@@ -35,8 +35,8 @@
 	{{{body}}}
 	{{ghost_foot}}
 	{{! Scripts }}
-	<script type='text/javascript' src='/assets/highlighter/prettify.js'></script>
-	<script type='text/javascript' src='/assets/js/all.min.js'></script>
+	<script type='text/javascript' src='{{ asset "assets/highlighter/prettify.js"}}'></script>
+	<script type='text/javascript' src='{{ asset "assets/js/all.min.js"}}'></script>
 
     <!-- Google Analytics -->
     <script>
